@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#home" class="logo">Portofolio<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#profil">Profil & Keahlian</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <p class="greeting">Halo, perkenalkan saya</p>
+                <h1>Rafi Nur Rahman <span class="gradient-text">Mahasiswa Informatika</span></h1>
+                <p class="description">Saya memiliki fokus pada pengembangan web. Mengubah ide menjadi realitas melalui
+                    baris kode.</p>
+                <div class="hero-buttons">
+                    <a href="#kontak" class="btn btn-primary">Hubungi Saya</a>
+                    <a href="#profil" class="btn btn-secondary">Jelajahi Profil</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <!-- Using a random high-quality placeholder that looks like a tech student/setup -->
+                <img src="WhatsApp Image 2026-04-07 at 20.55.28.jpeg" alt="Foto Profil" class="profile-img">
+                <div class="glow-effect"></div>
+            </div>
+        </section>
+
+        <section id="profil" class="profile-section">
+            <div class="section-header">
+                <h2>Profil & <span class="gradient-text">Keahlian</span></h2>
+                <p>Saya memiliki minat besar dalam memecahkan masalah melalui kode. Berikut teknologi yang sering saya
+                    gunakan:</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-solid fa-code skill-icon"></i>
+                    <h3>Frontend Development</h3>
+                    <p>HTML5, CSS3, JavaScript modern, React, dan desain responsif.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-database skill-icon"></i>
+                    <h3>Database Management</h3>
+                    <p>MySQL, PostgreSQL, MongoDB, dan perancangan skema sistem relasional.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-python skill-icon"></i>
+                    <h3>Programming Languages</h3>
+                    <p>Python, C++, Java, dan konsep Object-Oriented Programming (OOP).</p>
+                </div>
+            </div>
+
+            <div class="github-link-container">
+                <a href="https://github.com" target="_blank" class="github-btn">
+                    <i class="fa-brands fa-github"></i> Lihat proyek di GitHub
+                </a>
+            </div>
+        </section>
+
+        <section id="kontak" class="contact-section">
+            <div class="section-header">
+                <h2>Hubungi <span class="gradient-text">Saya</span></h2>
+                <p>Punya pertanyaan atau tawaran kolaborasi? Jangan ragu untuk mengirim pesan kepada saya.</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="form-card">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- PERHATIAN: Ganti tulisan ISI_DENGAN_ACCESS_KEY_ANDA_DISINI dengan kode dari email Anda -->
+                        <input type="hidden" name="access_key" value="cb14716c-45f7-4575-a6e3-3996b00cebf4">
+
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" name="email" placeholder="Masukkan alamat email aktif Anda..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan">Pesan</label>
+                            <textarea id="pesan" name="message" rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Portofolio Mahasiswa Informatika.
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar blur and visual change on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
